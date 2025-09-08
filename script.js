@@ -8,10 +8,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const img3 = document.getElementById("img-3");
   let img3Counter = 0;
 
+  const video = document.getElementById("video");
+
   img1.addEventListener("click", () => {
     if (img1Counter == 1) {
       // Abrir video em tela cheia no site
-      console.log("video");
+      video.style.zIndex = "15";
+      setInterval(() => {
+        video.style.zIndex = "5";
+      }, 5000);
 
       img1Counter = 0;
     } else {
@@ -24,7 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
   img2.addEventListener("click", () => {
     if (img2Counter == 1) {
       // Abrir video em tela cheia no site
-      console.log("video");
+      video.style.zIndex = "15";
+      setInterval(() => {
+        video.style.zIndex = "5";
+      }, 5000);
 
       img2Counter = 0;
     } else {
@@ -37,7 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
   img3.addEventListener("click", () => {
     if (img3Counter == 1) {
       // Abrir video em tela cheia no site
-      console.log("video");
+      video.style.zIndex = "15";
+      setInterval(() => {
+        video.style.zIndex = "5";
+      }, 5000);
 
       img3Counter = 0;
     } else {
