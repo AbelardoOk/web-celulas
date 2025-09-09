@@ -1,61 +1,146 @@
+/* ---- Configurações Globais e Reset ---- */
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  position: relative;
-}
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
 
-main {
-  position: absolute;
-  z-index: 10;
-
-  background-color: #000;
   height: 100vh;
-  width: 100vw;
   overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-direction: column;
 }
 
-.title {
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---- Cabeçalho Superior (Navbar) ---- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0081b8;
+  padding: 8px 40px;
+  color: white;
+}
+
+.logo-ufms {
+  height: 3rem;
+}
+
+.nav-item > a {
+  font-weight: 300;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 8px 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   color: #fff;
-  font-family: Roboto, sans-serif;
-  font-size: 32px;
-  font-weight: 500;
+  text-decoration: none;
 }
 
-.img-sec {
-  width: 94vw;
-  height: 80vh;
-  background-color: red;
+.nav-item {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #fff;
+}
 
+/* ---- Conteúdo Principal ---- */
+.container {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  padding: 40px;
+  min-height: calc(100vh - 60px);
+  gap: 20px;
 }
 
-.img-div {
-  height: 80vh;
-  width: 31vw;
-  background-color: blue;
+.logo-museu {
+  flex-basis: 20%;
+  max-width: 23rem;
 }
 
-.img-div > img {
-  width: max-content;
-  height: fit-content;
+.content-wrapper {
+  flex-basis: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-video {
-  position: absolute;
-  z-index: 5;
+.titulo-imagem {
+  margin-bottom: 30px;
+  max-width: 50rem;
+}
+
+/* ---- Container das Células ---- */
+.celulas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.celula {
+  width: fit-content;
+  height: 32rem;
+  object-fit: cover;
+  border-radius: 64px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.celula:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- Responsividade para Telas Menores (Celulares) ---- */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .logo-museu {
+    margin-bottom: 30px;
+    max-width: 200px;
+  }
+
+  .celulas-container {
+    gap: 15px;
+  }
+
+  .celula {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* --- Video Player --- */
+
+.video-container {
+  display: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: green;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+
+  justify-content: center;
+  align-items: center;
+}
+
+#video-player {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 5px;
 }

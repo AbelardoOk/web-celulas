@@ -3,20 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Museu de Ciência e Tecnologia - UFMS</title>
     <link rel="stylesheet" href="style.css" />
-    <title>Células</title>
   </head>
   <body>
-    <main>
-      <h1 class="title">CLIQUE EM UMA CÉLULA E VEJA A MÁGINA ACONTECER</h1>
-      <div class="img-sec">
-        <div class="img-div" id="img-1"><img src="teste1.png" alt="" /></div>
-        <div class="img-div" id="img-2"><img src="teste2.png" alt="" /></div>
-        <div class="img-div" id="img-3"><img src="teste3.png" alt="" /></div>
+    <header class="navbar">
+      <div class="nav-item">
+        <a href="#">SOBRE</a>
+      </div>
+
+      <h1 class="nav-item">UNIVERSIDADE FEDERAL DE MATO GROSSO DO SUL</h1>
+
+      <div class="nav-item">
+        <img src="src/logoUfms.png" alt="Logo UFMS" class="logo-ufms" />
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="logo-museu">
+        <img
+          src="src/logoMuseuCiencia.png"
+          alt="Logo Museu de Ciência e Tecnologia UFMS"
+        />
+      </div>
+
+      <div class="content-wrapper">
+        <img
+          src="src/imgTitulo.jpg"
+          alt="Clique em uma célula e veja a magia acontecer"
+          class="titulo-imagem"
+        />
+
+        <div class="celulas-container">
+          <img
+            src="src/Célula Nervosa.jpg"
+            alt="Célula Neurônio"
+            class="celula"
+            id="celula-neuronio"
+          />
+
+          <img
+            src="src/Célula epitelial.jpg"
+            alt="Célula Pincel"
+            class="celula"
+            id="celula-pincel"
+          />
+
+          <img
+            src="src/Célula caliciforme.jpg"
+            alt="Célula Gustativa"
+            class="celula"
+            id="celula-gustativa"
+          />
+        </div>
       </div>
     </main>
 
-    <video src="" id="video"></video>
+    <div id="video-container" class="video-container">
+      <video id="video-player" controls></video>
+    </div>
 
     <script src="script.js"></script>
   </body>

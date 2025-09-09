@@ -1,60 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const img1 = document.getElementById("img-1");
-  let img1Counter = 0;
+  const videoContainer = document.getElementById("video-container");
+  const videoPlayer = document.getElementById("video-player");
+  const celulas = document.querySelectorAll(".celula");
 
-  const img2 = document.getElementById("img-2");
-  let img2Counter = 0;
+  const videoSources = {
+    "celula-neuronio": "src/videos/Neuroleto.mp4",
+    "celula-pincel": "src/videos/Elio.mp4",
+    "celula-gustativa": "src/videos/Caliciforme.mp4",
+  };
 
-  const img3 = document.getElementById("img-3");
-  let img3Counter = 0;
+  const fecharVideo = () => {
+    videoContainer.style.display = "none";
+    videoPlayer.pause();
+    videoPlayer.src = "";
+  };
 
-  const video = document.getElementById("video");
+  celulas.forEach((celula) => {
+    celula.addEventListener("click", () => {
+      const celulaId = celula.id;
+      const videoSrc = videoSources[celulaId];
 
-  img1.addEventListener("click", () => {
-    if (img1Counter == 1) {
-      // Abrir video em tela cheia no site
-      video.style.zIndex = "15";
-      setInterval(() => {
-        video.style.zIndex = "5";
-      }, 5000);
+      if (videoSrc) {
+        videoPlayer.src = videoSrc;
+        videoContainer.style.display = "flex";
+        videoPlayer.play();
 
-      img1Counter = 0;
-    } else {
-      console.log("oi");
-      img1.children[0].src = "testeSucesso.png";
-      img1Counter++;
-    }
+        videoPlayer.requestFullscreen().catch((err) => {
+          console.log(
+            "Não foi possível entrar em modo tela cheia:",
+            err.message
+          );
+        });
+      }
+    });
   });
 
-  img2.addEventListener("click", () => {
-    if (img2Counter == 1) {
-      // Abrir video em tela cheia no site
-      video.style.zIndex = "15";
-      setInterval(() => {
-        video.style.zIndex = "5";
-      }, 5000);
+  videoPlayer.addEventListener("ended", fecharVideo);
 
-      img2Counter = 0;
-    } else {
-      console.log("oi");
-      img2.children[0].src = "testeSucesso.png";
-      img2Counter++;
-    }
-  });
-
-  img3.addEventListener("click", () => {
-    if (img3Counter == 1) {
-      // Abrir video em tela cheia no site
-      video.style.zIndex = "15";
-      setInterval(() => {
-        video.style.zIndex = "5";
-      }, 5000);
-
-      img3Counter = 0;
-    } else {
-      console.log("oi");
-      img3.children[0].src = "testeSucesso.png";
-      img3Counter++;
+  videoContainer.addEventListener("click", (event) => {
+    if (event.target === videoContainer) {
+      fecharVideo();
     }
   });
 });
