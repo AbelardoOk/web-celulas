@@ -25,17 +25,18 @@ img {
   justify-content: space-between;
   align-items: center;
   background-color: #0081b8;
-  padding: 8px 40px;
+  height: 6.5vh;
+  padding: 0 40px;
   color: white;
 }
 
 .logo-ufms {
-  height: 3rem;
+  height: 5.5vh;
 }
 
 .nav-item > a {
   font-weight: 300;
-  font-size: 0.8rem;
+  font-size: 1.5vh;
   cursor: pointer;
   padding: 8px 16px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -43,10 +44,12 @@ img {
   text-decoration: none;
 }
 
-.nav-item {
-  font-size: 1.5rem;
+.nav-title {
+  font-size: 2vh;
   font-weight: 400;
-  color: #fff;
+  letter-spacing: 0;
+  line-height: 1.75rem;
+  text-transform: none;
 }
 
 /* ---- Conteúdo Principal ---- */
@@ -61,7 +64,10 @@ img {
 
 .logo-museu {
   flex-basis: 20%;
-  max-width: 23rem;
+}
+
+.logo-museu > img {
+  width: 100%;
 }
 
 .content-wrapper {
@@ -74,7 +80,7 @@ img {
 
 .titulo-imagem {
   margin-bottom: 30px;
-  max-width: 50rem;
+  max-width: 50vw;
 }
 
 /* ---- Container das Células ---- */
@@ -87,8 +93,8 @@ img {
 }
 
 .celula {
-  width: fit-content;
-  height: 32rem;
+  width: 20vw;
+  height: fit-content;
   object-fit: cover;
   border-radius: 64px;
   cursor: pointer;

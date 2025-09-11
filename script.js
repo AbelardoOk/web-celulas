@@ -10,6 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const fecharVideo = () => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    }
+
     videoContainer.style.display = "none";
     videoPlayer.pause();
     videoPlayer.src = "";
