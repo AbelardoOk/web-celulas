@@ -108,23 +108,79 @@ img {
 
 /* ---- Responsividade para Telas Menores (Celulares) ---- */
 @media (max-width: 768px) {
+  body {
+    height: auto;
+    overflow-y: auto;
+  }
+
+  /* ---- Ajustes no Cabeçalho ---- */
+  .navbar {
+    padding: 10px 20px;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .nav-title {
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+    order: -1;
+  }
+
+  .nav-item > a {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  /* ---- Ajustes no Conteúdo Principal ---- */
   .container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 20px;
+    margin-top: 1rem;
+    min-height: auto;
+    gap: 1rem;
+  }
+
+  .nav-title {
+    display: none;
   }
 
   .logo-museu {
-    margin-bottom: 30px;
-    max-width: 200px;
+    flex-basis: auto;
+    width: 100%;
+    max-width: 180px;
+    margin-bottom: 20px;
   }
 
+  .content-wrapper {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .titulo-imagem {
+    max-width: 85vw;
+    margin-bottom: 25px;
+  }
+
+  /* ---- Layout das Células em Grade Flexível ---- */
   .celulas-container {
     gap: 15px;
+    width: 100%;
   }
 
   .celula {
-    width: 130px;
-    height: 130px;
+    /* Cria uma grade de 2 colunas que se ajusta à tela */
+    width: calc(50% - 7.5px);
+    height: auto;
+    aspect-ratio: 1 / 1.5;
+    border-radius: 32px;
+  }
+
+  /* ---- Ajuste no Player de Vídeo (Opcional) ---- */
+  #video-player {
+    border-radius: 0; /* Ocupa mais espaço da tela no mobile */
   }
 }
 
