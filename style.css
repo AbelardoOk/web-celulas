@@ -1,233 +1,128 @@
-/* ---- Configurações Globais e Reset ---- */
+/* --- Reset Básico e Configurações Globais --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
+body,
+html {
+  height: 100%;
+  width: 100%;
   background-color: #ffffff;
-
-  height: 100vh;
+  font-family: Arial, sans-serif;
   overflow: hidden;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ---- Cabeçalho Superior (Navbar) ---- */
-.navbar {
+/* --- Container Principal --- */
+.container {
+  width: 100%;
+  max-width: 95%;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: #0081b8;
-  height: 6.5vh;
-  padding: 0 40px;
+}
+
+/* --- Cabeçalho --- */
+.main-header {
+  background-color: #0088b7; /* Cor azul extraída da imagem */
+  /* padding: 0 40px; */
   color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 6px;
 }
 
-.logo-ufms {
-  height: 5.5vh;
+.main-header .container {
+  justify-content: space-between;
 }
 
-@keyframes click-bounce {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
+.nav-link {
+  font-weight: 500;
+  letter-spacing: 0.0892857143em;
+  line-height: normal;
+  text-indent: 0.0892857143em;
+  text-transform: uppercase;
 
-.clicked {
-  animation: click-bounce 0.2s ease;
-}
-
-.nav-item > a {
-  font-weight: 300;
-  font-size: 1.5vh;
+  font-size: 1.4vh;
   cursor: pointer;
   padding: 8px 16px;
-  background-color: #0081b8;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 6px;
+  background-color: #0088b7;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 3px;
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
+  margin-right: 38px;
 
   transition: all 0.3s ease-in-out;
 }
 
-.nav-item > a:hover {
+.nav-link:hover {
   background-color: #248fbd;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 4px 10px;
+  box-shadow: rgba(0, 0, 0, 0.26) 0px 3px 5px;
 }
 
-.nav-title {
-  font-size: 2vh;
+.header-title {
+  font-size: 1.25rem;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.75rem;
-  text-transform: none;
+  text-align: center;
+  flex-grow: 1;
+  padding-right: 56px;
 }
 
-/* ---- Conteúdo Principal ---- */
-.container {
+.header-logo {
+  height: 4rem;
+  width: auto;
+}
+
+/* --- Conteúdo Principal --- */
+.main-content {
   display: flex;
+  flex-grow: 1; /* Faz o conteúdo principal ocupar todo o espaço vertical restante */
   align-items: center;
-  justify-content: space-around;
-  padding: 40px;
-  min-height: calc(100vh - 60px);
-  gap: 20px;
-}
-
-.logo-museu {
-  flex-basis: 20%;
-}
-
-.logo-museu > img {
-  width: 100%;
+  justify-content: center;
+  height: calc(100% - 64px); /* Altura total menos a altura do cabeçalho */
 }
 
 .content-wrapper {
-  flex-basis: 75%;
-  display: flex;
+  width: 61.5vw;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
-.titulo-imagem {
-  margin-bottom: 30px;
-  max-width: 50vw;
+.museu-logo-container {
+  width: 100%;
+  flex-shrink: 0; /* Impede que o logo encolha */
 }
 
-/* ---- Container das Células ---- */
-.celulas-container {
+.museu-logo-container img {
+  width: auto;
+  height: 10.6rem;
+}
+
+.cta-container {
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  flex-wrap: wrap;
+  justify-content: end;
+  margin: 36px 88px 0 0;
 }
 
-.celula {
-  width: 20vw;
-  height: fit-content;
-  object-fit: cover;
-  border-radius: 64px;
+/* --- Botão de Ação --- */
+.adventure-button {
+  display: inline-block;
+  font-weight: 700;
+  background-color: rgb(0, 136, 183);
+  color: white;
+  padding: 10px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  font-family: sans-serif;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.1s ease;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px;
 }
 
-.celula:hover {
-  transform: scale(1.08);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-/* ---- Responsividade para Telas Menores (Celulares) ---- */
-@media (max-width: 768px) {
-  body {
-    height: auto;
-    overflow-y: auto;
-  }
-
-  /* ---- Ajustes no Cabeçalho ---- */
-  .navbar {
-    padding: 10px 20px;
-    height: auto;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
-  }
-
-  .nav-title {
-    font-size: 1.1rem;
-    width: 100%;
-    text-align: center;
-    order: -1;
-  }
-
-  .nav-item > a {
-    font-size: 0.9rem;
-    padding: 6px 12px;
-  }
-
-  /* ---- Ajustes no Conteúdo Principal ---- */
-  .container {
-    flex-direction: column-reverse;
-    padding: 20px;
-    margin-top: 1rem;
-    min-height: auto;
-    gap: 1rem;
-  }
-
-  .nav-title {
-    display: none;
-  }
-
-  .logo-museu {
-    flex-basis: auto;
-    width: 100%;
-    max-width: 180px;
-    margin-bottom: 20px;
-  }
-
-  .content-wrapper {
-    flex-basis: auto;
-    width: 100%;
-  }
-
-  .titulo-imagem {
-    max-width: 85vw;
-    margin-bottom: 25px;
-  }
-
-  /* ---- Layout das Células em Grade Flexível ---- */
-  .celulas-container {
-    gap: 15px;
-    width: 100%;
-  }
-
-  .celula {
-    /* Cria uma grade de 2 colunas que se ajusta à tela */
-    width: calc(50% - 7.5px);
-    height: auto;
-    aspect-ratio: 1 / 1.5;
-    border-radius: 32px;
-  }
-
-  /* ---- Ajuste no Player de Vídeo (Opcional) ---- */
-  #video-player {
-    border-radius: 0; /* Ocupa mais espaço da tela no mobile */
-  }
-}
-
-/* --- Video Player --- */
-
-.video-container {
-  display: none;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.85);
-  z-index: 1000;
-
-  justify-content: center;
-  align-items: center;
-}
-
-#video-player {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 5px;
+.adventure-button:hover {
+  opacity: 0.92;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 4px;
 }

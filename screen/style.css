@@ -1,0 +1,235 @@
+/* ---- Configurações Globais e Reset ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+
+  height: 100vh;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---- Cabeçalho Superior (Navbar) ---- */
+/* --- Cabeçalho --- */
+.main-header {
+  background-color: #0088b7; /* Cor azul extraída da imagem */
+  /* padding: 0 40px; */
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 6px;
+}
+
+.head-container {
+  width: 100%;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.main-header .head-container {
+  justify-content: space-between;
+}
+
+.nav-link {
+  font-weight: 500;
+  letter-spacing: 0.0892857143em;
+  line-height: normal;
+  text-indent: 0.0892857143em;
+  text-transform: uppercase;
+
+  font-size: 1.4vh;
+  cursor: pointer;
+  padding: 8px 16px;
+  background-color: #0088b7;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 3px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-right: 38px;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  background-color: #248fbd;
+  box-shadow: rgba(0, 0, 0, 0.26) 0px 3px 5px;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  flex-grow: 1;
+  padding-right: 56px;
+}
+
+.header-logo {
+  height: 4rem;
+  width: auto;
+}
+
+/* ---- Conteúdo Principal ---- */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px;
+  min-height: calc(100vh - 60px);
+  gap: 20px;
+}
+
+.logo-museu {
+  flex-basis: 20%;
+}
+
+.logo-museu > img {
+  width: 100%;
+}
+
+.content-wrapper {
+  flex-basis: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo-imagem {
+  margin-bottom: 30px;
+  max-width: 50vw;
+}
+
+/* ---- Container das Células ---- */
+.celulas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.celula {
+  width: 20vw;
+  height: fit-content;
+  object-fit: cover;
+  border-radius: 64px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.celula:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- Responsividade para Telas Menores (Celulares) ---- */
+@media (max-width: 768px) {
+  body {
+    height: auto;
+    overflow-y: auto;
+  }
+
+  /* ---- Ajustes no Cabeçalho ---- */
+  .navbar {
+    padding: 10px 20px;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .nav-title {
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+    order: -1;
+  }
+
+  .nav-item > a {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  /* ---- Ajustes no Conteúdo Principal ---- */
+  .container {
+    flex-direction: column-reverse;
+    padding: 20px;
+    margin-top: 1rem;
+    min-height: auto;
+    gap: 1rem;
+  }
+
+  .nav-title {
+    display: none;
+  }
+
+  .logo-museu {
+    flex-basis: auto;
+    width: 100%;
+    max-width: 180px;
+    margin-bottom: 20px;
+  }
+
+  .content-wrapper {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .titulo-imagem {
+    max-width: 85vw;
+    margin-bottom: 25px;
+  }
+
+  /* ---- Layout das Células em Grade Flexível ---- */
+  .celulas-container {
+    gap: 15px;
+    width: 100%;
+  }
+
+  .celula {
+    /* Cria uma grade de 2 colunas que se ajusta à tela */
+    width: calc(50% - 7.5px);
+    height: auto;
+    aspect-ratio: 1 / 1.5;
+    border-radius: 32px;
+  }
+
+  /* ---- Ajuste no Player de Vídeo (Opcional) ---- */
+  #video-player {
+    border-radius: 0; /* Ocupa mais espaço da tela no mobile */
+  }
+}
+
+/* --- Video Player --- */
+
+.video-container {
+  display: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+
+  justify-content: center;
+  align-items: center;
+}
+
+#video-player {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 5px;
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Sala Imersiva - UFMS",
+  "short_name": "Sala Imersiva",
+  "start_url": "/celula/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "lang": "pt-BR",
+  "scope": "/celula/",
+  "description": "Célula eucarionte interativa para a sala imersiva da UFMS",
+  "theme_color": "#0088B7",
+  "screenshots": [
+    {
+      "src": "/celula-eucarionte-interativa/homepage.png",
+      "sizes": "2880x1704",
+      "type": "image/png"
+    }
+  ]
+}
