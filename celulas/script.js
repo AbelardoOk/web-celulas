@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const celulas = document.querySelectorAll(".celula");
 
   const videoSources = {
-    "celula-neuronio": "/src/videos/Neuroleto.mp4",
-    "celula-pincel": "/src/videos/Elio.mp4",
-    "celula-gustativa": "/src/videos/Caliciforme.mp4",
+    "celula-neuronio": "../src/videos/Neuroleto.mp4",
+    "celula-pincel": "../src/videos/Elio.mp4",
+    "celula-gustativa": "../src/videos/Caliciforme.mp4",
   };
 
   const fecharVideo = () => {
